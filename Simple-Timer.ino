@@ -24,11 +24,13 @@ void loop() {
 void Timer() {
   // local variable
   unsigned long timer = millis(); // Approx days  != 50 Days then Arduino millis() will reset to Zero
-  int Sec = timer / 1000.00; // total Seconds
   int Seconds = Sec % 60; // Seconds
-  int Mnts = Sec / 60 ; // Minutes
-  int Hour = Sec / 3600; // Hour
-  int Day = Sec / 86400; // Day
+  int Mt = Sec /60  ; // Minutes
+   int Mnts = Mt % 60  ; // Minutes
+  int Hr = Sec / 3600; // Hour
+  int Hour = Hr % 3600; // Hour
+  int Dy = Sec / 86400L; // Day
+   int Day = Dy % 86400L; // Day
   Serial.print(Day);
   Serial.print(":");
   Serial.print(Hour);
